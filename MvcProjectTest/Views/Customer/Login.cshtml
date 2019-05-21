@@ -1,0 +1,53 @@
+﻿@model MvcProjectTest.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="user-login">
+    <div class="container">
+        <div class="user-info-block-row">
+            <div class="Login">
+                <form class="dropdown-menu">
+                    <div class="U-form-group">
+                        <p>會員帳號</p>
+                        <input type="email" class="U-form-control" placeholder="請輸入會員帳號">
+                    </div>
+                    <div class="U-form-group">
+                        <p>會員密碼</p>
+                        <input type="password" class="U-form-control" placeholder="請輸入密碼">
+                        <small id="emailHelp" class="form-text text-muted">6 ~ 30個英數字元，分大小寫</small>
+                    </div>
+                    <div class="U-form-check">
+                        <div>
+                            <input type="checkbox" class="U-form-check-input" id="U-check">
+                            <label class="U-form-check-label" for="U-check">
+                                記住帳號
+                            </label>
+                        </div>
+                        <div>
+                            <a href="#">忘記密碼?</a>
+                        </div>
+                    </div>
+                    <button type="submit">登入</button>
+                </form>
+                <p>還不是沒有會員? <a href="#">加入會員</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+@section topCss {
+    <link href="~/Assets/Css/Login_out_stylesheet.css" rel="stylesheet" />
+}
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

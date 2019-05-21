@@ -1,0 +1,73 @@
+﻿@model MvcProjectTest.Models.Customer
+
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="user-login">
+        <div class="container">
+            <div class="user-info-block-row">
+                <div class="Registration">
+                    @Html.ValidationSummary(true, "", new { @class = "prompt-text" })
+                    <form class="dropdown-menu">
+                        <div class="U-form-group">
+                            <p>@Html.LabelFor(m => m.CustomerName)</p>
+                            @Html.TextBoxFor(m => m.CustomerName, new { placeholder = "請輸入會員姓名", @class = "U-form-control" })
+                            @Html.ValidationMessageFor(m => m.CustomerName, "", new { @class = "prompt-text text-dan" })
+                        </div>
+                        <div class="U-form-group">
+                            <p>@Html.LabelFor(m => m.CustomerAccount)</p>
+                            @Html.TextBoxFor(m => m.CustomerAccount, new { placeholder = "請輸入會員帳號", @class = "U-form-control" })
+                            @Html.ValidationMessageFor(m => m.CustomerAccount, "", new { @class = "prompt-text text-dan" })
+                        </div>
+                        <div class="U-form-group">
+                            <p>@Html.LabelFor(m => m.CustomerPassword)</p>
+                            @Html.PasswordFor(m => m.CustomerPassword, new { placeholder = "請輸入會員密碼", @class = "U-form-control" })
+                            <span id="passwordtext" class="text-dan">字串長度在 6 ~ 30 個字之間</span>
+                            @Html.ValidationMessageFor(m => m.CustomerPassword, "", new { @class = "prompt-text text-dan" })
+                        </div>
+                        <div class="U-form-group">
+                            <p>@Html.LabelFor(m => m.ConfirmPassword)</p>
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { placeholder = "請輸入確認密碼", @class = "U-form-control" })
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "prompt-text text-dan" })
+                        </div>
+                        <div class="U-form-group">
+                            <p>@Html.LabelFor(m => m.CustomerEmail)</p>
+                            @Html.TextBoxFor(m => m.CustomerEmail, new { placeholder = "請輸入電子郵件", @type = "email", @class = "U-form-control" })
+                            @Html.ValidationMessageFor(m => m.CustomerEmail, "", new { @class = "prompt-text text-dan" })
+                        </div>
+                        <div class="U-form-group">
+                            <p>@Html.LabelFor(m => m.CustomerPhone)</p>
+                            @Html.TextBoxFor(m => m.CustomerPhone, new { placeholder = "請輸入手機號碼", @class = "U-form-control" })
+                            @Html.ValidationMessageFor(m => m.CustomerPhone, "", new { @class = "prompt-text text-dan" })
+                        </div>
+                        <div class="U-form-group">
+                            <p>@Html.LabelFor(m => m.CustomerAddress)</p>
+                            @Html.TextBoxFor(m => m.CustomerAddress, new { placeholder = "請輸入地址", @class = "U-form-control" })
+                            @Html.ValidationMessageFor(m => m.CustomerAddress, "", new { @class = "prompt-text text-dan" })
+                        </div>
+                        <div class="U-form-group">
+                            <p>@Html.LabelFor(m => m.CustomerBirth)</p>
+                            @Html.TextBoxFor(m => m.CustomerBirth, new { @type = "date", @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.CustomerBirth, "", new { @class = "prompt-text text-dan" })
+                        </div>
+                        <input type="submit" value="註冊" />
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+@section topCss {
+    <link href="~/Assets/Css/Login_out_stylesheet.css" rel="stylesheet" />
+}
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    }

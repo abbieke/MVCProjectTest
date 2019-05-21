@@ -1,0 +1,150 @@
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+
+.test-use-body {
+  width: 100%;
+  height: 0px;
+}
+
+.footer-info-block-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#aboutAsWithLog {
+  width: 25%;
+}
+
+.prompt-text {
+  color: #a94442;
+}
+
+.text-dan {
+  display: block;
+  white-space: wrap;
+  font-size: 8px;
+}
+
+.dropdowns {
+  height: 4.5rem;
+}
+
+.dropdowns .menu .first-page {
+  width: 150px;
+  color: #fff;
+  text-align: center;
+}
+
+.dropdowns .menu .middle {
+  width: 150px;
+  color: #fff;
+  text-align: center;
+}
+
+.dropdowns .menu .menu-nothing {
+  width: 150px;
+}
+
+/*====================================*/
+.user-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 100px;
+}
+
+.user-login .container {
+  width: 600px;
+}
+
+.user-login .user-info-block-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.user-login .Login {
+  width: 50%;
+  text-align: center;
+}
+
+.user-login .Registration {
+  width: 50%;
+  text-align: center;
+}
+
+.user-login input[type="submit"] {
+  margin-top: 15px;
+  background-color: #ccc;
+  border: none;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 8px;
+}
+
+.user-login input[type="submit"]:hover {
+  background-color: gray;
+}
+
+.user-login small {
+  display: block;
+  font-size: 8px;
+}
+
+/*====================================*/
+.U-form-group {
+  margin-left: 15px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.U-form-control {
+  display: inline-block;
+  width: 80%;
+  height: 18px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+}
+
+.U-form-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 8px;
+}
+
+.U-form-select {
+  margin-bottom: 15px;
+}
+/*# sourceMappingURL=Login_out_stylesheet.css.map */

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>書院</title>
+    <link href="~/Assets/Css/normalize.css" rel="stylesheet" />
+    <link href="~/Assets/Css/Index_stylesheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+    @RenderSection("topCss", required: false)
+</head>
+<body>
+    <header class="dropdowns">
+        <div class="dropdowns-top">
+            <div class="container">
+                <div class="menu">
+                    <div class="first-page">
+                        <a href="#" class="text-size flex">
+                            <div><img src="~/Assets/Images/cat/003.png" alt="白爛貓" style="width: 70px;height: 70px;"></div>
+                            <div><span>書院</span></div>
+                        </a>
+                    </div>
+                    <div class="middle">
+                        <div>
+                            <h2>@ViewData["Titlett"]</h2>
+                        </div>
+                    </div>
+                    <div class="menu-nothing"></div>
+                </div>
+                <!-- <div class="user-info-title">會員註冊</div> -->
+            </div>
+        </div>
+    </header>
+    <div class="block-for-header-wrapper">
+        <!-- 注意這塊與Header保持同高，若有修改頁首的留意 -->
+    </div>
+    @RenderBody()
+    <footer class="index-footer">
+        <div class="container">
+            <div class="footer-info-block-row">
+                <div id="aboutAsWithLog">
+                    <div class="footer-main-info-block footer-contact">
+                        關注我們
+                    </div>
+                    <ul class="footer-column-item-list contact-icon-list">
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-contact-icon-animate1">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-contact-icon-animate1">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-contact-icon-animate1">
+                                <i class="fab fa-line"></i>
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-contact-icon-animate1">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 0) {          /* 要滑動到選單的距離 */
+                    $('.dropdowns').addClass('navFixed');   /* 幫選單加上固定效果 */
+                    //$('.header-wrapper').addClass('block-for-header-wrapper');
+                } else {
+                    $('.dropdowns').removeClass('navFixed'); /* 移除選單固定效果 */
+                    //$('.header-wrapper').removeClass('block-for-header-wrapper');
+                }
+            });
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
