@@ -1,0 +1,54 @@
+.newest-tab-block {
+  padding-top: 30px;
+}
+
+.newest-tab-title-h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.newest-tab-title-row-block {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0 30px 0;
+}
+
+.newest-tab-title-row {
+  display: inline-block;
+  vertical-align: top;
+  z-index: 1;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newest-tab-title-li {
+  display: inline-block;
+}
+
+.newest-tab-title-li:hover {
+  color: #49bcab;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.newest-tab-title-li a:focus {
+  color: #49bcab;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.newest-tab-text {
+  font-size: 1.4rem;
+  padding: 15px;
+}
+
+.tab-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=newest-tab-block.css.map */

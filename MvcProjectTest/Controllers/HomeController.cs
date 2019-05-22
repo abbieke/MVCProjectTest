@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MvcProjectTest.Models;
+using MvcProjectTest.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,23 +10,25 @@ namespace MvcProjectTest.Controllers
 {
     public class HomeController : Controller
     {
+        public readonly BooksRepository _repo;
+        public HomeController()
+        {
+            _repo = new BooksRepository();
+        }
+        // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var books = _repo.SelectBooks();
+            var topbooks = _repo.SelectTopBooks();
+            Mix mix = new Mix() { Books = books, SecBooks = topbooks };
+            return View(mix);
         }
-
-        public ActionResult About()
+        public ActionResult Test()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            var books = _repo.SelectBooks();
+            var topbooks = _repo.SelectTopBooks();
+            Mix mix = new Mix() { Books = books, SecBooks = topbooks };
+            return View(mix);
         }
     }
 }

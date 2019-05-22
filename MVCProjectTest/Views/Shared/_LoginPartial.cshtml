@@ -1,0 +1,148 @@
+﻿
+@if (Request.IsAuthenticated)
+{
+    <header class="dropdowns">
+        <div class="dropdowns-top">
+            <div class="container">
+                <div class="bookshopping-menu flex">
+                    <div class="bkshop-logo flex ">
+                        <a href="#" class="dropdowns-top-logo-link flex">
+                            <img class="dropdowns-logo-book" src="~/Assets/Images/logo/B-Bookstore-logo3.png" alt="">
+                            <img class="dropdowns-logo-text" src="~/Assets/Images/logo/B-Bookstore-logo4.png" alt="">
+                        </a>
+                    </div>
+                    <nav class="bkshop-nav boxfloat">
+                        <ul class="bookmenu">
+                            <li class="book-item">
+                                <a href="#">home</a>
+                                <ul class="book-item-list">
+                                    <li class="book-item book-item-has-children">
+                                        <a href="#"> Checkout</a>
+                                        <ul class="book-last-list">
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="book-item book-item-has-children"><a href="#"> Checkout</a></li>
+                                    <li class="book-item book-item-has-children"><a href="#"> Checkout</a></li>
+                                </ul>
+                            </li>
+                            <li class="book-item"> <a href="#">home</a></li>
+                            <li class="book-item"> <a href="#">home</a></li>
+                            <li class="book-item"> <a href="#">home</a></li>
+                        </ul>
+                    </nav>
+                    <div class="bkshop-searchbox">
+                        <form action="#" class="search">
+                            <i class="fas fa-search"></i>
+                            <input type="text">
+                        </form>
+                    </div>
+                    <div class="bkshop-member-carbox">
+                        <ul class="bookmenu">
+                            <li class="book-item">
+                                <a href="#"><i class="fas fa-user top-icon"></i></a>
+                                <ul class="book-item-list book-item-list-right">
+                                    <li class="book-item book-item-has-children">Hello,MotherFucker</li>
+                                    <li class="book-item book-item-has-children">@Html.ActionLink(" 登出 ", "SignOut", "Account")</li>
+                                </ul>
+                            </li>
+                            <li class="book-item">
+                                <a href="#"><i class="fas fa-shopping-cart top-icon"></i></a>
+                                <ul class="book-item-list book-item-list-right">
+                                    <li class="book-item book-item-has-children">
+                                        <a href="#">car</a>
+                                        <ul class="book-last-list">
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+}
+else
+{
+    <header class="dropdowns">
+        <div class="dropdowns-top">
+            <div class="container">
+                <div class="bookshopping-menu flex">
+                    <div class="bkshop-logo flex ">
+                        <a href="#" class="dropdowns-top-logo-link flex">
+                            <img class="dropdowns-logo-book" src="~/Assets/Images/logo/B-Bookstore-logo3.png" alt="">
+                            <img class="dropdowns-logo-text" src="~/Assets/Images/logo/B-Bookstore-logo4.png" alt="">
+                        </a>
+                    </div>
+                    <nav class="bkshop-nav boxfloat">
+                        <ul class="bookmenu">
+                            <li class="book-item">
+                                <a href="#">home</a>
+                                <ul class="book-item-list">
+                                    <li class="book-item book-item-has-children">
+                                        <a href="#"> Checkout</a>
+                                        <ul class="book-last-list">
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="book-item book-item-has-children"><a href="#"> Checkout</a></li>
+                                    <li class="book-item book-item-has-children"><a href="#"> Checkout</a></li>
+                                </ul>
+                            </li>
+                            <li class="book-item"> <a href="#">home</a></li>
+                            <li class="book-item"> <a href="#">home</a></li>
+                            <li class="book-item"> <a href="#">home</a></li>
+                        </ul>
+                    </nav>
+                    <div class="bkshop-searchbox">
+                        <form action="#" class="search">
+                            <i class="fas fa-search"></i>
+                            <input type="text">
+                        </form>
+                    </div>
+                    <div class="bkshop-member-carbox">
+                        <ul class="bookmenu">
+                            <li class="book-item">
+                                <a href="#"><i class="fas fa-user top-icon"></i></a>
+                                <ul class="book-item-list book-item-list-right">
+                                    <li class="book-item book-item-has-children">@Html.ActionLink(" Sign In", "Login", "Account")</li>
+                                    <li class="book-item book-item-has-children">@Html.ActionLink(" Sign Up", "Registration", "Account")</li>
+                                </ul>
+                            </li>
+                            <li class="book-item">
+                                <a href="#"><i class="fas fa-shopping-cart top-icon"></i></a>
+                                <ul class="book-item-list book-item-list-right">
+                                    <li class="book-item book-item-has-children">
+                                        <a href="#">car</a>
+                                        <ul class="book-last-list">
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+}

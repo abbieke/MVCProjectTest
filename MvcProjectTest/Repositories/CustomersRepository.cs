@@ -31,5 +31,43 @@ namespace MvcProjectTest.Repositories
                 conn.Execute(sql, new { cust.CustomerName,cust.CustomerAccount, cust.CustomerPassword, cust.CustomerEmail, cust.CustomerPhone, cust.CustomerAddress, cust.CustomerBirth });
             }
         }
+
+        public bool SelectCustomer(string CustomerAccount)
+        {
+            using (conn)
+            {
+                string sql = "Select CustomerAccount From Customers Where CustomerAccount = '" + CustomerAccount + "'";
+                var cust = conn.QueryFirstOrDefault<Customer>(sql);
+                if(cust == null)
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+        }
+
+        public bool SelectCustomerEmail(string CustomerEmail)
+        {
+            using (conn)
+            {
+                string sql = "Select CustomerEmail From Customers Where CustomerEmail = '" + CustomerEmail + "'";
+                var cust = conn.QueryFirstOrDefault<Customer>(sql);
+                if (cust == null)
+                {
+                    return true;
+                }
+                else { return false; }
+            }
+        }
+        public Customer CustomerLogin(string account, string password)
+        {
+            using (conn)
+            {
+                string sql = "Select * From Customers Where CustomerAccount= '" + account + "' and CustomerPassword= '" + password + "';";
+                var cust = conn.QueryFirstOrDefault<Customer>(sql);
+                return cust;
+
+            }
+        }
     }
 }

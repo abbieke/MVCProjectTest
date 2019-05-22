@@ -1,0 +1,237 @@
+.index-bigimage-box {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url(/Assets/Images/OtherPic/book.jpg);
+}
+
+.index-bigimage-box:hover::after {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.index-bigimage-box::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.bigimage-detail {
+  position: relative;
+  text-align: center;
+  padding-top: 120px;
+}
+
+.header-text {
+  color: #fff;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  padding-top: 0;
+  display: block;
+}
+
+.center-text {
+  color: #f27900;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0;
+  padding-top: 20px;
+  display: block;
+}
+
+.bottom-text {
+  width: 50%;
+  color: #fff;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: px;
+  padding-top: 0;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 15px 0 50px 0;
+}
+
+.shop-button {
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  line-height: 25px;
+  font-weight: 500;
+  background-color: #ffb974;
+  padding: 10px 25px;
+  z-index: 10;
+  position: relative;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.shop-button:hover {
+  background-color: #ff7474;
+  color: #fff;
+  border: 1px solid #ffb974;
+  -webkit-box-shadow: 0 0 20px 0 #ffb974;
+          box-shadow: 0 0 20px 0 #ffb974;
+}
+
+.index-blog {
+  margin-bottom: 50px;
+  display: block;
+  width: 100%;
+  background: transparent;
+  height: 570px;
+  background-image: url(https://demoprestashop.aeipix.com/AX04/mybook75/modules/aei_cmstestimony/views/img/Testimonial-Bg.jpg);
+  background-position: 50% 50%;
+  padding: 50px 0;
+}
+
+.index-blog:hover .block-banner::after {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+.index-blog .block-banner::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.index-block-left {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 40%;
+  height: 480px;
+}
+
+.index-block-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  top: 10%;
+}
+
+.index-block-inner .banner-button {
+  margin-top: 10px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  line-height: 30px;
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  background-color: #ffb974;
+  padding: 0 20px;
+  z-index: 5;
+}
+
+.index-block-inner .banner-button:hover {
+  background-color: #ff7474;
+  color: #fff;
+  border: 1px solid #ffb974;
+}
+
+.banner-title {
+  display: block;
+  font-size: 36px;
+  color: #000;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: 0;
+}
+
+.banner-desc {
+  display: block;
+  font-size: 20px;
+  color: #000;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0;
+}
+
+.index-block-right {
+  position: relative;
+  left: 10%;
+  width: 50%;
+  height: 480px;
+  padding: 50px 0;
+}
+
+.block-right-image img {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+.block-right-text {
+  padding: 20px 0;
+}
+
+.block-right-text .flex {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.icon-image img {
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 5px;
+  padding-right: 20px;
+}
+
+.text-right {
+  padding-bottom: 5px;
+}
+
+.top-text {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.end-text {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 200;
+  text-align: left;
+}
+
+.desc {
+  margin-top: 20px;
+  color: #fff;
+  text-align: center;
+}
+/*# sourceMappingURL=index-bigimage.css.map */

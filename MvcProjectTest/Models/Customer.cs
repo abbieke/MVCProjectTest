@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace MvcProjectTest.Models
 {
@@ -34,11 +35,13 @@ namespace MvcProjectTest.Models
         [EmailAddress]
         [Required(ErrorMessage = "請輸入Email")]
         [DataType(DataType.EmailAddress)]
+        [Remote("CheckCustomerEmail", "Account", ErrorMessage = "信箱已存在")]
         public string CustomerEmail { get; set; }
 
         [Display(Name = "會員帳號")]
         [Required]
         [StringLength(20, MinimumLength = 8, ErrorMessage = "最少需要8個字元")]
+        [Remote("CheckCustomerAccount", "Account", ErrorMessage = "遠端驗證失敗")]
         public string CustomerAccount { get; set; }
 
         [Display(Name ="會員密碼")]
@@ -48,21 +51,8 @@ namespace MvcProjectTest.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "確認密碼")]
-        [Compare("CustomerPassword", ErrorMessage = "密碼和確認密碼不相符")]
+        [System.ComponentModel.DataAnnotations.Compare("CustomerPassword", ErrorMessage = "密碼和確認密碼不相符")]
         public string ConfirmPassword { get; set; }
     }
-    public class LoginModel
-    {
-        [Required]
-        [Display(Name = "帳號")]
-        public string CustomerAccount { get; set; }
-
-        [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "密碼")]
-        public string CustomerPassword { get; set; }
-
-        [Display(Name = "記住我?")]
-        public bool RememberMe { get; set; }
-    }
+    
 }

@@ -25,6 +25,16 @@ namespace MvcProjectTest
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/css/base").Include().Include(
+                "~/Assets/Css/normalize.css",
+                "~/Assets/Css/index_stylesheet.css"));
+
+            bundles.Add(new StyleBundle("~/css/indexView").Include().Include(
+                "~/Assets/Css/indexView_stylesheet.css",
+                "~/Assets/Css/new-product-card.css",
+                "~/Assets/Css/newest-tab-block.css",
+                "~/Assets/Css/index-bigimage.css"));
+
         }
     }
 }

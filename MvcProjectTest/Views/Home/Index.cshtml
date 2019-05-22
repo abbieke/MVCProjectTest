@@ -1,31 +1,376 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@using MvcProjectTest.Models
+@model Mix
+
+@{
+    ViewBag.Title = "新知書櫥";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+@Styles.Render("~/css/indexView")
+
+<div class="index-body">
+    <div class="index-bigimage-box">
+        <div class="container">
+            <div class="bigimage-detail">
+                <span class="header-text">每日一書，新知書櫥</span>
+                <span class="center-text">New Knowledge Bookcase</span>
+                <span class="bottom-text">
+                    Become your Bookcase, read everyday, persistent study each day.
+                </span>
+                <a href="#" class="shop-button">About Us</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="newest-tab-block">
+            <h1 class="newest-tab-title-h1">
+                SpotLight
+            </h1>
+            <div id="newest-tab">
+                <div class="newest-tab-title-row-block">
+                    <ul class="newest-tab-title-row" id="a1">
+                        <li class="newest-tab-title-li">
+                            <a href="#tab-new-arrival" class="newest-tab-text">
+                                New
+                                Arrival
+                            </a>
+                        </li>
+                        <li class="newest-tab-title-li">
+                            <a href="#tab-random" class="newest-tab-text">
+                                Random
+                                Recommand
+                            </a>
+                        </li>
+                        <li class="newest-tab-title-li">
+                            <a href="#tab-best-sell" class="newest-tab-text">
+                                Best
+                                Sell
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="tab-new-arrival" class="tab-inner">
+
+                    <!-- 內容區 系統塞商品 -->
+                    @foreach (var item in Model.Books)
+                    {
+                        <div class="product-card-out-block">
+                            <div class="product-card-block">
+
+                                <div class="product-card-img-block">
+                                    <a href="#" class="product-link">
+                                        <img class="pc-img"
+                                             src="~/Assets/Images/@Html.DisplayFor(modelItem => item.CategoryEngName)/@Html.DisplayFor(modelItem => item.BookImage)"
+                                             alt="1">
+                                    </a>
+                                    <div class="product-card-visual-cart-block">
+                                        <form action="add-cart">
+
+                                            <input type="hidden" name="id" value="1">
+                                            <!-- hidden的可以儲存資料用 根據後端修改 -->
+                                            <button class="product-card-cart-button card-quick-button-style"
+                                                    type="submit">
+                                                <i class="fas fa-shopping-cart"></i>
+                                                <span class="product-card-cart-tip pc-quick-tip-style">
+                                                    Add To
+                                                    Cart
+                                                </span>
+                                            </button>
+                                        </form>
+                                        <a href="#" class="product-card-quick-view">
+                                            <i class="far fa-eye card-quick-button-style"></i>
+                                            <span class="product-card-quick-view-tip pc-quick-tip-style">
+                                                Quick
+                                                View
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-card-description-block">
+                                    <a href="#" class="product-link">
+                                        <h3 class="product-card-title">
+                                            @Html.DisplayFor(modelItem => item.BooksName)
+                                        </h3>
+                                        <div class="product-writter-block">
+                                            <span class="product-writter-span product-card-des-text">@Html.DisplayFor(modelItem => item.AuthorName)</span>
+                                        </div>
+                                        <div class="product-price-block">
+                                            <span class="product-price-span product-card-des-text">$@Html.DisplayFor(modelItem => item.UnitPrice)</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+                <!-- tab2 -->
+                <div id="tab-random" class="tab-inner">
+                    @foreach (var item in Model.SecBooks)
+                    {
+                        <div class="product-card-out-block">
+                            <div class="product-card-block">
+                                <div class="product-card-img-block">
+                                    <a href="#" class="product-link">
+                                        <img class="pc-img"
+                                             src="~/Assets/Images/@Html.DisplayFor(modelItem => item.CategoryEngName)/@Html.DisplayFor(modelItem => item.BookImage)"
+                                             alt="1">
+                                    </a>
+                                    <div class="product-card-visual-cart-block">
+                                        <form action="add-cart">
+
+                                            <input type="hidden" name="id" value="1">
+                                            <!-- hidden的可以儲存資料用 根據後端修改 -->
+                                            <button class="product-card-cart-button card-quick-button-style"
+                                                    type="submit">
+                                                <i class="fas fa-shopping-cart"></i>
+                                                <span class="product-card-cart-tip pc-quick-tip-style">
+                                                    Add To
+                                                    Cart
+                                                </span>
+                                            </button>
+                                        </form>
+                                        <a href="#" class="product-card-quick-view">
+                                            <i class="far fa-eye card-quick-button-style"></i>
+                                            <span class="product-card-quick-view-tip pc-quick-tip-style">
+                                                Quick
+                                                View
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="product-card-description-block">
+                                    <a href="#" class="product-link">
+                                        <h3 class="product-card-title">
+                                            @Html.DisplayFor(modelItem => item.BooksName)
+                                        </h3>
+                                        <div class="product-writter-block">
+                                            <span class="product-writter-span product-card-des-text">@Html.DisplayFor(modelItem => item.AuthorName)</span>
+                                        </div>
+                                        <div class="product-price-block">
+                                            <span class="product-price-span product-card-des-text">$@Html.DisplayFor(modelItem => item.UnitPrice)</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                     }
+                </div>
+
+
+                <!-- tab3 -->
+                <div id="tab-best-sell" class="tab-inner">
+                    <div class="product-card-out-block">
+                        <div class="product-card-block">
+
+                            <div class="product-card-img-block">
+                                <a href="#" class="product-link">
+                                    <img class="pc-img"
+                                         src="https://demoprestashop.aeipix.com/AX04/mybook75/img/p/1/0/8/108-home_default.jpg"
+                                         alt="1">
+                                </a>
+                                <div class="product-card-visual-cart-block">
+                                    <form action="add-cart">
+
+                                        <input type="hidden" name="id" value="1">
+                                        <!-- hidden的可以儲存資料用 根據後端修改 -->
+                                        <button class="product-card-cart-button card-quick-button-style"
+                                                type="submit">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span class="product-card-cart-tip pc-quick-tip-style">
+                                                Add To
+                                                Cart
+                                            </span>
+                                        </button>
+                                    </form>
+                                    <a href="#" class="product-card-quick-view">
+                                        <i class="far fa-eye card-quick-button-style"></i>
+                                        <span class="product-card-quick-view-tip pc-quick-tip-style">
+                                            Quick
+                                            View
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-card-description-block">
+                                <a href="#" class="product-link">
+                                    <h3 class="product-card-title">
+                                        有可能的任務
+                                    </h3>
+                                    <div class="product-writter-block">
+                                        <span class="product-writter-span product-card-des-text">湯姆克魯斯</span>
+                                    </div>
+                                    <div class="product-price-block">
+                                        <span class="product-price-span product-card-des-text">$300</span>
+                                    </div>
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="product-card-out-block">
+                        <div class="product-card-block">
+
+                            <div class="product-card-img-block">
+                                <a href="#" class="product-link">
+                                    <img class="pc-img"
+                                         src="https://demoprestashop.aeipix.com/AX04/mybook75/img/p/1/0/8/108-home_default.jpg"
+                                         alt="1">
+                                </a>
+                                <div class="product-card-visual-cart-block">
+                                    <form action="add-cart">
+
+                                        <input type="hidden" name="id" value="1">
+                                        <!-- hidden的可以儲存資料用 根據後端修改 -->
+                                        <button class="product-card-cart-button card-quick-button-style"
+                                                type="submit">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span class="product-card-cart-tip pc-quick-tip-style">
+                                                Add To
+                                                Cart
+                                            </span>
+                                        </button>
+                                    </form>
+                                    <a href="#" class="product-card-quick-view">
+                                        <i class="far fa-eye card-quick-button-style"></i>
+                                        <span class="product-card-quick-view-tip pc-quick-tip-style">
+                                            Quick
+                                            View
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-card-description-block">
+                                <a href="#" class="product-link">
+                                    <h3 class="product-card-title">
+                                        有可能的任務
+                                    </h3>
+                                    <div class="product-writter-block">
+                                        <span class="product-writter-span product-card-des-text">湯姆克魯斯</span>
+                                    </div>
+                                    <div class="product-price-block">
+                                        <span class="product-price-span product-card-des-text">$300</span>
+                                    </div>
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="product-card-out-block">
+                        <div class="product-card-block">
+
+                            <div class="product-card-img-block">
+                                <a href="#" class="product-link">
+                                    <img class="pc-img"
+                                         src="https://demoprestashop.aeipix.com/AX04/mybook75/img/p/1/0/8/108-home_default.jpg"
+                                         alt="1">
+                                </a>
+                                <div class="product-card-visual-cart-block">
+                                    <form action="add-cart">
+
+                                        <input type="hidden" name="id" value="1">
+                                        <!-- hidden的可以儲存資料用 根據後端修改 -->
+                                        <button class="product-card-cart-button card-quick-button-style"
+                                                type="submit">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span class="product-card-cart-tip pc-quick-tip-style">
+                                                Add To
+                                                Cart
+                                            </span>
+                                        </button>
+                                    </form>
+                                    <a href="#" class="product-card-quick-view">
+                                        <i class="far fa-eye card-quick-button-style"></i>
+                                        <span class="product-card-quick-view-tip pc-quick-tip-style">
+                                            Quick
+                                            View
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-card-description-block">
+                                <a href="#" class="product-link">
+                                    <h3 class="product-card-title">
+                                        有可能的任務
+                                    </h3>
+                                    <div class="product-writter-block">
+                                        <span class="product-writter-span product-card-des-text">湯姆克魯斯</span>
+                                    </div>
+                                    <div class="product-price-block">
+                                        <span class="product-price-span product-card-des-text">$300</span>
+                                    </div>
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+    <div class="index-blog">
+        <div class="container">
+            <div class="flex">
+                <div class="index-block-left">
+                    <a href="#" class="block-banner">
+                        <img src="https://demoprestashop.aeipix.com/AX04/mybook75/modules/aei_cmstestimony/views/img/testimony-banner.jpg"
+                             alt="">
+                    </a>
+                    <div class="index-block-inner">
+                        <span class="banner-title">Apple</span>
+                        <span class="banner-desc">happy day</span>
+                        <a href="#" class="banner-button">buy now</a>
+                    </div>
+                </div>
+                <div class="index-block-right">
+                    <div class="block-right-image">
+                        <img src="https://randomuser.me/api/portraits/men/97.jpg" alt="">
+                    </div>
+                    <div class="block-right-text">
+                        <div class="flex">
+                            <span class="icon-image">
+                                <img src="https://demoprestashop.aeipix.com/AX04/mybook75/modules/aei_cmstestimony/views/img/icon.png"
+                                     alt="">
+                            </span>
+                            <div class="text-right">
+                                <div class="top-text">ipsum</div>
+                                <div class="end-text">consectetur</div>
+                            </div>
+                        </div>
+
+                        <div class="desc">
+                            <p>
+                                posuere sapien eu, ornare nulla. Ut volutpat porttitor urna et laoreet. Fusce
+                                porttitor mauris magna, ac pretium mauris tempus id. Nulla ut arcu urna.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+@section tabs
+{
+    <script>
+        $(function () {
+            $("#newest-tab").tabs();
+        });
+    </script>    
+}
+

@@ -1,0 +1,125 @@
+﻿@using MvcProjectTest.Models
+@model Mix
+
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Books.First().BookId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Books.First().BooksName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Books.First().AuthorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Books.First().UnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Books.First().InStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Books.First().Discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Books.First().BookImage)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Books)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BooksName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookImage)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SecBooks.First().BookId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecBooks.First().BooksName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecBooks.First().AuthorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecBooks.First().UnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecBooks.First().InStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecBooks.First().Discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecBooks.First().BookImage)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.SecBooks)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BooksName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookImage)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+</table>

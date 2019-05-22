@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    @Styles.Render("~/css/base")
+    @RenderSection("topCss", required: false)
+</head>
+
+<body>
+    @*<header class="dropdowns">
+            <div class="dropdowns-top">
+                <div class="container">
+                    <div class="bookshopping-menu flex">
+                        <div class="bkshop-logo flex ">
+                            <a href="#" class="dropdowns-top-logo-link flex">
+                                <img class="dropdowns-logo-book" src="~/Assets/Images/logo/B-Bookstore-logo3.png" alt="">
+                                <img class="dropdowns-logo-text" src="~/Assets/Images/logo/B-Bookstore-logo4.png" alt="">
+                            </a>
+                        </div>
+                        <nav class="bkshop-nav boxfloat">
+                            <ul class="bookmenu">
+                                <li class="book-item">
+                                    <a href="#">home</a>
+                                    <ul class="book-item-list">
+                                        <li class="book-item book-item-has-children">
+                                            <a href="#"> Checkout</a>
+                                            <ul class="book-last-list">
+                                                <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                                <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                                <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                                <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="book-item book-item-has-children"><a href="#"> Checkout</a></li>
+                                        <li class="book-item book-item-has-children"><a href="#"> Checkout</a></li>
+                                    </ul>
+                                </li>
+                                <li class="book-item"> <a href="#">home</a></li>
+                                <li class="book-item"> <a href="#">home</a></li>
+                                <li class="book-item"> <a href="#">home</a></li>
+                            </ul>
+                        </nav>
+                        <div class="bkshop-searchbox">
+                            <form action="#" class="search">
+                                <i class="fas fa-search"></i>
+                                <input type="text">
+                            </form>
+                        </div>
+                        <div class="bkshop-member-carbox">
+                            <ul class="bookmenu">
+                                <li class="book-item">
+                                    <a href="#"><i class="fas fa-user top-icon"></i></a>
+                                    <ul class="book-item-list book-item-list-right">
+                                        <li class="book-item book-item-has-children">@Html.ActionLink(" Sign In", "Login", "Account")</li>
+                                        <li class="book-item book-item-has-children">@Html.ActionLink(" Sign Up", "Registration", "Account")</li>
+                                    </ul>
+                                </li>
+                                <li class="book-item">
+                                    <a href="#"><i class="fas fa-shopping-cart top-icon"></i></a>
+                                    <ul class="book-item-list book-item-list-right">
+                                        <li class="book-item book-item-has-children">
+                                            <a href="#">car</a>
+                                            <ul class="book-last-list">
+                                                <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                                <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                                <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                                <li class=" book-last-item"> <a href="#">Checkout</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>*@
+    @Html.Partial("_LoginPartial")
+    <div class="block-for-header-wrapper">
+        <!-- 注意這塊與Header保持同高，若有修改頁首的留意 -->
+    </div>
+
+    @RenderBody()
+
+    <footer class="index-footer">
+        <div class="container">
+            <div class="footer-info-block-row">
+                <div class="footer-column-list-block">
+                    <div class="footer-main-info-block">
+                        牧書
+                    </div>
+                    <ul class="footer-column-item-list">
+                        <li class="footer-list-item">
+                            <a href="#">
+                                關於我們
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#">
+                                功能介紹
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#">
+                                客服中心
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#">
+                                管理介面
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column-list-block">
+                    <div class="footer-main-info-block">
+                        牧書
+                    </div>
+                    <ul class="footer-column-item-list">
+                        <li class="footer-list-item">
+                            <a href="#">
+                                關於我們
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#">
+                                功能介紹
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#">
+                                客服中心
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#">
+                                管理介面
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column-list-block">
+                    <div class="footer-main-info-block">
+                        牧書
+                    </div>
+                    <ul class="footer-column-item-list">
+                        <li class="footer-list-item">
+                            <a href="#">
+                                關於我們
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#">
+                                功能介紹
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#">
+                                客服中心
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#">
+                                管理介面
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column-list-block">
+                    <div class="footer-main-info-block footer-contact">
+                        關注我們
+                    </div>
+                    <ul class="footer-column-item-list contact-icon-list">
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-contact-icon-animate1">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-contact-icon-animate1">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-contact-icon-animate1">
+                                <i class="fab fa-line"></i>
+                            </a>
+                        </li>
+                        <li class="footer-list-item">
+                            <a href="#" class="footer-contact-icon-animate1">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+    @RenderSection("scripts", required: false)
+    @RenderSection("tabs", required: false)
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 0) {          /* 要滑動到選單的距離 */
+                    $('.dropdowns').addClass('navFixed').removeClass('dropdowns-top');   /* 幫選單加上固定效果 */
+                } else {
+                    $('.dropdowns').removeClass('navFixed').addClass('dropdowns-top'); /* 移除選單固定效果 */
+                }
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- newest tab -->
+    <script>
+        $(function () {
+            $("#newest-tab").tabs();
+            // var $li = $('.newest-tab-title-row li');
+            // $($li.eq(0).addClass('active').find('a').attr('href')).siblings('.tab-inner').hide();
+
+            // $li.click(function () {
+            //     $($(this).find('a').attr('href')).show().siblings('.tab-inner').hide();
+            //     $(this).addClass('active').siblings('.active').removeClass('active');
+            // });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

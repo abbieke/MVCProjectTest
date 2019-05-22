@@ -129,20 +129,56 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\MixModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BooksRepository.cs" />
     <Compile Include="Repositories\CustomersRepository.cs" />
+    <Compile Include="Services\HashService.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Css\index-bigimage.css" />
+    <Content Include="Assets\Css\index-product-list-stylesheet.css" />
+    <Content Include="Assets\Css\indexView_stylesheet.css" />
     <Content Include="Assets\Css\Index_stylesheet.css" />
     <Content Include="Assets\Css\Login_out_stylesheet.css" />
+    <Content Include="Assets\Css\new-product-card.css" />
+    <Content Include="Assets\Css\newest-tab-block.css" />
     <Content Include="Assets\Css\normalize.css" />
+    <Content Include="Assets\Images\TChinese\010001.jpg" />
+    <Content Include="Assets\Images\TChinese\010002.jpg" />
+    <Content Include="Assets\Images\TChinese\010003.jpg" />
+    <Content Include="Assets\Images\TChinese\010004.jpg" />
     <Content Include="Assets\Images\cat\003.png" />
+    <Content Include="Assets\Images\Ebook\020001.jpg" />
+    <Content Include="Assets\Images\Ebook\020002.jpg" />
+    <Content Include="Assets\Images\Ebook\020003.jpg" />
+    <Content Include="Assets\Images\Ebook\020004.jpg" />
+    <Content Include="Assets\Images\Foreign\040001.jpg" />
+    <Content Include="Assets\Images\Foreign\040002.jpg" />
+    <Content Include="Assets\Images\Foreign\040003.jpg" />
+    <Content Include="Assets\Images\Foreign\040004.jpg" />
+    <Content Include="Assets\Images\logo\B-Bookstore-logo3.png" />
+    <Content Include="Assets\Images\logo\B-Bookstore-logo4.png" />
+    <Content Include="Assets\Images\OtherPic\book.jpg" />
+    <Content Include="Assets\Images\OtherPic\eraser.png" />
+    <Content Include="Assets\Images\OtherPic\KaBi.png" />
+    <Content Include="Assets\Images\SChinese\030001.jpg" />
+    <Content Include="Assets\Images\SChinese\030002.jpg" />
+    <Content Include="Assets\Images\SChinese\030003.jpg" />
+    <Content Include="Assets\Images\SChinese\030004.jpg" />
+    <Content Include="Assets\Images\top-sp-sales\book1.jpg" />
+    <Content Include="Assets\Images\top-sp-sales\book2.jpg" />
+    <Content Include="Assets\Images\top-sp-sales\book3.jpeg" />
+    <Content Include="Assets\Images\top-sp-sales\sale1.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -164,7 +200,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -175,17 +213,19 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout1.cshtml" />
-    <Content Include="Views\Customer\Registration.cshtml" />
-    <Content Include="Views\Customer\Index.cshtml" />
-    <Content Include="Views\Customer\Login.cshtml" />
+    <Content Include="Views\Account\Registration.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutIndex.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\Script\" />
+    <Folder Include="Views\Customer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,0 +1,51 @@
+﻿@model MvcProjectTest.ViewModels.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="user-login">
+        <div class="container">
+            <div class="user-info-block-row">
+                <div class="Login">
+                    @Html.ValidationSummary(true, "", new { @class = "prompt-text" })
+                    <form class="dropdown-menu">
+                        <div class="U-form-group">
+                            <p>@Html.LabelFor(m => m.CustomerAccount)</p>
+                            @Html.TextBoxFor(m => m.CustomerAccount, new { placeholder = "請輸入會員帳號", @class = "U-form-control" })
+                            @Html.ValidationMessageFor(m => m.CustomerAccount, "", new { @class = "prompt-text text-dan" })
+                        </div>
+                        <div class="U-form-group">
+                            <p>@Html.LabelFor(m => m.CustomerPassword)</p>
+                            @Html.PasswordFor(m => m.CustomerPassword, new { placeholder = "請輸入會員密碼", @class = "U-form-control" })
+                            @Html.ValidationMessageFor(m => m.CustomerPassword, "", new { @class = "prompt-text text-dan" })
+                        </div>
+                        <div class="U-form-check">
+                            <div>
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                            <div>
+                                <a href="#">忘記密碼?</a>
+                            </div>
+                        </div>
+                        <input type="submit" value="登入" />
+                    </form>
+                    <p>還不是沒有會員? @Html.ActionLink("加入會員", "Registration", "Account")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section topCss {
+    <link href="~/Assets/Css/Login_out_stylesheet.css" rel="stylesheet" />
+}
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
